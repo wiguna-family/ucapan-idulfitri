@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Hari Raya Idul Fitri 1447 H — Keluarga Besar Wiguna Family</title>
+  <meta name="description" content="Ucapan Selamat Hari Raya Idul Fitri 1447 H dari Keluarga Besar Wiguna Family. Mohon Maaf Lahir dan Batin." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- AOS (Animate On Scroll) Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================
+       CANVAS: Star Particles
+       ============================================ -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ============================================
+       CANVAS: Confetti (initial burst)
+       ============================================ -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- ============================================
+       AUDIO: Takbiran Player (floating button)
+       ============================================ -->
+  <div class="audio-control" id="audio-control">
+    <button class="audio-btn" id="audio-toggle" title="Play / Pause Takbiran" aria-label="Toggle takbiran audio">
+      🔇
+    </button>
+  </div>
+
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="hero" id="hero">
+    <!-- Crescent Moon -->
+    <div class="moon-container parallax-hero" data-speed="0.03">
+      <div class="moon"></div>
+    </div>
+
+    <!-- Lanterns -->
+    <div class="lanterns-container" aria-hidden="true">
+      <div class="lantern">🏮</div>
+      <div class="lantern">🏮</div>
+      <div class="lantern">🏮</div>
+      <div class="lantern">🏮</div>
+      <div class="lantern">🏮</div>
+    </div>
+
+    <!-- Hero Text Content -->
+    <div class="hero-content">
+      <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+
+      <h1 class="hero-title">
+        Selamat Hari Raya
+        <br />Idul Fitri
+        <span class="year">1447 Hijriyah</span>
+      </h1>
+
+      <div class="hero-ornament"></div>
+
+      <p class="hero-subtitle">Mohon Maaf Lahir dan Batin</p>
+
+      <p class="hero-family">
+        Atas Nama <strong>Keluarga Besar Wiguna Family</strong>
+      </p>
+    </div>
+
+    <!-- Mosque Silhouette (SVG) -->
+    <div class="mosque-silhouette" aria-hidden="true">
+      <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="mosqueGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0d7a3e" stop-opacity="0.6" />
+            <stop offset="100%" stop-color="#062d17" stop-opacity="0.9" />
+          </linearGradient>
+        </defs>
+        <!-- Skyline with mosque domes and minarets -->
+        <path fill="url(#mosqueGrad)" d="
+          M0,320 L0,260
+          L80,260 L80,200 L90,180 L100,200 L100,260
+          L200,260 L200,240 L210,220 L220,200 L230,180 L240,160
+          L250,140 L255,130 L260,125 L265,122 L270,120 L275,122 L280,125 L285,130 L290,140
+          L300,160 L310,180 L320,200 L330,220 L340,240 L340,260
+          L440,260 L440,220 L445,210 L450,200 L453,195 L457,192 L460,190 L463,192 L467,195 L470,200 L475,210 L480,220 L480,260
+          L540,260 L540,210 L550,190 L560,210 L560,260
+          L650,260 L650,230 L660,200 L670,175 L678,158 L685,148 L690,142
+          L695,138 L700,136 L705,138 L710,142 L715,148 L722,158 L730,175 L740,200 L750,230 L750,260
+          L850,260 L850,220 L855,210 L860,204 L865,200 L870,204 L875,210 L880,220 L880,260
+          L960,260 L960,200 L970,180 L980,200 L980,260
+          L1060,260 L1060,230 L1070,210 L1078,195 L1085,185 L1092,180 L1098,178
+          L1100,177 L1102,178 L1108,180 L1115,185 L1122,195 L1130,210 L1140,230 L1140,260
+          L1220,260 L1220,210 L1230,190 L1240,210 L1240,260
+          L1310,260 L1310,230 L1318,215 L1325,205 L1330,200 L1335,205 L1342,215 L1350,230 L1350,260
+          L1440,260 L1440,320 Z
+        " />
+        <!-- Minaret tips (stars/crescents placeholders) -->
+        <circle cx="90" cy="175" r="4" fill="#d4a843" opacity="0.7" />
+        <circle cx="270" cy="115" r="6" fill="#d4a843" opacity="0.7" />
+        <circle cx="460" cy="185" r="5" fill="#d4a843" opacity="0.7" />
+        <circle cx="550" cy="185" r="4" fill="#d4a843" opacity="0.7" />
+        <circle cx="700" cy="131" r="6" fill="#d4a843" opacity="0.7" />
+        <circle cx="970" cy="175" r="4" fill="#d4a843" opacity="0.7" />
+        <circle cx="1100" cy="172" r="5" fill="#d4a843" opacity="0.7" />
+        <circle cx="1230" cy="185" r="4" fill="#d4a843" opacity="0.7" />
+        <circle cx="1330" cy="195" r="4" fill="#d4a843" opacity="0.7" />
+      </svg>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       BEDUK SECTION
+       ============================================ -->
+  <section class="section beduk-section" id="beduk">
+    <h2 class="section-title" data-aos="fade-up">🥁 Tabuh Beduk</h2>
+    <div class="section-ornament" data-aos="fade-up" data-aos-delay="100"></div>
+
+    <div class="beduk-wrapper" data-aos="zoom-in" data-aos-delay="200">
+      <div class="beduk-image-container" id="beduk-container">
+        <img src="beduk.png" alt="Beduk" class="beduk-image" id="beduk-img" />
+        <div class="beduk-ripple" id="beduk-ripple"></div>
+      </div>
+      <p class="beduk-text"><span class="icon">👆</span> Ketuk beduk untuk membunyikan!</p>
+      <p class="beduk-counter" id="beduk-counter"></p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       GREETING CARDS SECTION
+       ============================================ -->
+  <section class="section greetings-section" id="greetings">
+    <h2 class="section-title" data-aos="fade-up">✨ Ucapan Idul Fitri</h2>
+    <div class="section-ornament" data-aos="fade-up" data-aos-delay="100"></div>
+
+    <div class="greetings-grid">
+      <!-- Card 1 -->
+      <div class="greeting-card" data-aos="fade-up" data-aos-delay="100">
+        <span class="card-icon">🌙</span>
+        <h3>Taqabbalallahu Minna Wa Minkum</h3>
+        <p>Semoga Allah menerima amal ibadah kita semua di bulan Ramadhan yang penuh berkah ini. Aamiin Ya Rabbal Alamin.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="greeting-card" data-aos="fade-up" data-aos-delay="200">
+        <span class="card-icon">🤲</span>
+        <h3>Mohon Maaf Lahir & Batin</h3>
+        <p>Di hari yang fitri ini, kami sekeluarga memohon maaf atas segala khilaf dan salah. Semoga silaturahmi kita selalu terjaga.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="greeting-card" data-aos="fade-up" data-aos-delay="300">
+        <span class="card-icon">🕌</span>
+        <h3>Kembali Suci</h3>
+        <p>Semoga di Idul Fitri ini kita semua kembali suci seperti bayi yang baru lahir. Selamat merayakan kemenangan!</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="greeting-card" data-aos="fade-up" data-aos-delay="400">
+        <span class="card-icon">💫</span>
+        <h3>Penuh Berkah</h3>
+        <p>Semoga tahun ini membawa lebih banyak kebahagiaan, kesehatan, rezeki, dan keberkahan untuk kita semua.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PERSONAL MESSAGE SECTION
+       ============================================ -->
+  <section class="section message-section" id="message">
+    <h2 class="section-title" data-aos="fade-up">💌 Pesan Dari Kami</h2>
+    <div class="section-ornament" data-aos="fade-up" data-aos-delay="100"></div>
+
+    <div class="message-card" data-aos="zoom-in" data-aos-delay="200">
+      <span class="quote-mark">"</span>
+      <p class="message-text">
+        Di hari yang penuh kebahagiaan ini, kami dari Keluarga Besar Wiguna Family
+        mengucapkan Selamat Hari Raya Idul Fitri 1447 H.
+        Semoga segala amal ibadah kita diterima oleh Allah SWT.
+        Mari kita saling memaafkan dan mempererat tali silaturahmi.
+        Taqabbalallahu minna wa minkum, shiyamana wa shiyamakum.
+      </p>
+      <p class="sender-name" id="sender-name">Keluarga Besar Wiguna Family</p>
+      <p class="sender-sub">Idul Fitri 1447 H / 2026 M</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="footer-buttons">
+      <a class="btn btn-whatsapp" id="share-wa" href="#" target="_blank" rel="noopener noreferrer">
+        📱 Share ke WhatsApp
+      </a>
+      <button class="btn btn-outline" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        ⬆ Kembali ke Atas
+      </button>
+    </div>
+    <p class="footer-text">
+      Dibuat dengan <span class="heart">❤</span> untuk Keluarga Besar Wiguna Family
+    </p>
+  </footer>
+
+  <!-- ============================================
+       SCRIPTS
+       ============================================ -->
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>
