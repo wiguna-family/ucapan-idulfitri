@@ -375,3 +375,53 @@ function initWhatsAppShare() {
     const waText = encodeURIComponent(SHARE_MESSAGE);
     shareBtn.href = `https://wa.me/?text=${waText}`;
 }
+
+// =============================================
+// LIGHTBOX (Gallery Photo Viewer)
+// =============================================
+function openLightbox(frameEl) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    if (!lightbox) return;
+
+    // Get image src from the clicked frame
+    const img = frameEl.querySelector('.gallery-img');
+    const caption = frameEl.closest('.gallery-item')?.querySelector('.gallery-caption');
+
+    if (img && img.style.display !== 'none') {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxImg.style.display = 'block';
+    } else {
+        // No photo loaded, don't open lightbox
+        return;
+    }
+
+    if (caption) {
+        lightboxCaption.textContent = caption.textContent;
+    }
+
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(event) {
+    const lightbox = document.getElementById('lightbox');
+    // Only close if clicking backdrop or close button (not the image itself)
+    if (event.target === lightbox || event.target.classList.contains('lightbox-close')) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+});
